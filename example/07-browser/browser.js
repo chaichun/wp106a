@@ -14,7 +14,7 @@ onload = function() {
   };
 
   document.querySelector('#home').onclick = function() {
-    navigateTo('http://www.github.com/');
+    navigateTo('http://www.github.com/');   //導航至:
   };
 
   document.querySelector('#reload').onclick = function() {
@@ -35,7 +35,7 @@ onload = function() {
   document.querySelector('#location-form').onsubmit = function(e) {
     e.preventDefault();
     navigateTo(document.querySelector('#location').value);
-  };
+  };   //網址框
 
   webview.addEventListener('close', handleExit);
   webview.addEventListener('did-start-loading', handleLoadStart);

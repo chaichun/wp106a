@@ -1,10 +1,10 @@
-const {Menu, dialog} = require('electron').remote
+const {Menu, dialog} = require('electron').remote　
 const fs = require('fs')
 
 const template = [
   {
-    label: 'File',
-    submenu: [
+    label: 'File',            // 功課：新增檔案，開新檔案，另存檔案，自己新增項目
+    submenu: [                // remote > 於main 取得
       {
         label: 'Open',
         accelerator: 'CmdOrCtrl+O',
@@ -43,9 +43,9 @@ const template = [
   {
     label: 'Edit',
     submenu: [
-      { role: 'undo' },
+      { role: 'undo' },     // role 預設功能
       { role: 'redo' },
-      { type: 'separator' },
+      { type: 'separator' }, // 分隔線
       { role: 'cut' },
       { role: 'copy' },
       { role: 'paste' }

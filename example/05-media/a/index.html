@@ -9,8 +9,8 @@
 </script>
 <script>
 function OpenFile() {
-  const {dialog} = require('electron').remote
-  var file = dialog.showOpenDialog(
+  const {dialog} = require('electron').remote //Es6 語法 解構性賦值
+  var file = dialog.showOpenDialog(  // 打開之後 openfile 打開的選擇介面
       function (fileName) {
         if(fileName === undefined){
             alert("No file selected")
@@ -19,16 +19,17 @@ function OpenFile() {
         var filePath = document.getElementById('filePath') 
         filePath.innerText = fileName
         var videoControl = document.getElementById('videoControl')
-        videoControl.setAttribute("src", fileName)
+        videoControl.setAttribute("src", fileName)  
+        // 把fileName 丟到→src"裡面"**於30行 src"" controls ,if 直接打到src"",則直接開啟檔案
+        console.log('fileName=' , fileName)         
       }
-    )
-  console.log('file=' , file)
+    )         //  vh  窗的百分比   / em ,ps ,%
 }
 </script>
   <button onclick="OpenFile()">OpenFile</button>
   <label id="filePath"></label><br/>
-  <video id="videoControl" style="width:100%; height:80vh" controls>
-  您的瀏覽器不支援此 HTML5 影片標籤
-  </video>
+  <video id="videoControl" style="width:100%; height:80vh" controls> 
+    您的瀏覽器不支援此 HTML5 影片標籤
+  </video>  
 </body>
 </html>
